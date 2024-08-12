@@ -133,5 +133,13 @@ body {
   font-size: smaller;
 }
 
+.b1 {
+  font-style: italic;
+}
 
+.b2 {
+  background-color: #a9c7ee;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 

@@ -52,28 +52,30 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title"><span class="b1">PrivacyOracle</span> : Configuring Sensor Privacy
+              Firewalls with Large Language Models in Smart
+              Built Environments</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=ote_P0QAAAAJ&hl=en&oi=ao" target="_blank">Brian Wang</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=F6Gzg9gAAAAJ&hl=en&oi=sra" target="_blank">Luis Antonio Garcia</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://scholar.google.com/citations?user=X2Qs7XYAAAAJ&hl=en&oi=ao" target="_blank">Mani Srivastava</a><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup> University of California Los Angeles, <sup>2</sup> University of Utah <br>SafeThings 2024</span>
+                    <!--<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>-->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10579527" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -83,7 +85,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,11 +93,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/nesl/PrivacyOracle" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -105,7 +107,7 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -113,7 +115,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -123,23 +125,6 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -148,7 +133,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Modern smart buildings and environments rely on sensory infrastructure to capture and process information about their inhabitants. However, it remains challenging to ensure that this infrastructure complies with privacy norms, preferences, and regulations; individuals occupying smart environments are often occupied with their tasks, lack awareness of the surrounding sensing mechanisms, and are non-technical experts. This problem is only exacerbated by the increasing number of sensors being deployed in these environments, as well as services seeking to use their sensory data. As a result, individuals face an unmanageable number of privacy decisions, preventing them from effectively behaving as their own “privacy firewall” for filtering and managing the multitude of personal information flows. These decisions often require qualitative reasoning over privacy regulations, understanding privacy-sensitive contexts, and applying various privacy transformations when necessary We propose the use of Large Language Models (LLMs), which have demonstrated qualitative reasoning over social/legal norms, sensory data, and program synthesis, all of which are necessary for privacy firewalls. We present PrivacyOracle, a prototype system for configuring privacy firewalls on behalf of users using LLMs, enabling automated privacy decisions in smart built environments. Our evaluation shows that PrivacyOracle achieves up to 98% accuracy in identifying privacy-sensitive states from sensor data, and demonstrates 75% accuracy in measuring social acceptability of information flows.
           </p>
         </div>
       </div>
@@ -159,33 +144,30 @@
 
 
 <!-- Image carousel -->
+<!--  
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
       <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
@@ -194,91 +176,43 @@
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
+<section class="hero is-small b2">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+        <h2 class="title is-3">Abstract</h2>
       </div>
+      <div class="content has-text-justified">
+      Modern smart buildings and environments rely on sensory infrastructure to capture and process information about their inhabitants. However, it remains challenging to ensure that this infrastructure complies with privacy norms, preferences, and regulations; individuals occupying smart environments are often occupied with their tasks, lack awareness of the surrounding sensing mechanisms, and are non-technical experts. This problem is only exacerbated by the increasing number of sensors being deployed in these environments, as well as services seeking to use their sensory data. As a result, individuals face an unmanageable number of privacy decisions, preventing them from effectively behaving as their own “privacy firewall” for filtering and managing the multitude of personal information flows. These decisions often require qualitative reasoning over privacy regulations, understanding privacy-sensitive contexts, and applying various privacy transformations when necessary We propose the use of Large Language Models (LLMs), which have demonstrated qualitative reasoning over social/legal norms, sensory data, and program synthesis, all of which are necessary for privacy firewalls. We present PrivacyOracle, a prototype system for configuring privacy firewalls on behalf of users using LLMs, enabling automated privacy decisions in smart built environments. Our evaluation shows that PrivacyOracle achieves up to 98% accuracy in identifying privacy-sensitive states from sensor data, and demonstrates 75% accuracy in measuring social acceptability of information flows.
+
+      </div>
+      <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@inproceedings{wang2024privacyoracle,
+        title={PrivacyOracle: Configuring Sensor Privacy Firewalls with Large Language Models in Smart Built Environments},
+        author={Wang, Brian and Garcia, Luis Antonio and Srivastava, Mani},
+        booktitle={2024 IEEE Security and Privacy Workshops (SPW)},
+        pages={239--245},
+        year={2024},
+        organization={IEEE}
+      }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
