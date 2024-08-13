@@ -138,8 +138,47 @@ body {
 }
 
 .b2 {
-  background-color: #a9c7ee;
+  background-color: #cfe5f4;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
+.b3 {
+  background-color: red;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+.b4 {
+  border: 5px solid black;
+  border-radius: 25px;
+  padding: 5px;
+  width:50%;
+}
+
+
+.b5 {
+  border: 5px solid black;
+  border-radius: 25px;
+  padding: 5px;
+  width:90%;
+}
+
+.b6 {
+  border: 5px solid black;
+  padding: 5px;
+  width:40%;
+}
+
+.b7 {
+  padding-top: 50px;
+}
+
+.noborder {
+  border: none;
+}
+
+.lowpad {
+  padding-bottom: 50px;
+}

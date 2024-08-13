@@ -85,15 +85,15 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    <span class="link-block">
+                      <a href="static/pdfs/poster.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Poster</span>
                     </a>
-                  </span> -->
+                  </span>
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -125,7 +125,7 @@
 </section>
 
 
-<!-- Paper abstract -->
+<!-- Paper Section -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -183,21 +183,111 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Why a privacy firewall, and what is it?</h2>
       </div>
       <div class="content has-text-justified">
-      Modern smart buildings and environments rely on sensory infrastructure to capture and process information about their inhabitants. However, it remains challenging to ensure that this infrastructure complies with privacy norms, preferences, and regulations; individuals occupying smart environments are often occupied with their tasks, lack awareness of the surrounding sensing mechanisms, and are non-technical experts. This problem is only exacerbated by the increasing number of sensors being deployed in these environments, as well as services seeking to use their sensory data. As a result, individuals face an unmanageable number of privacy decisions, preventing them from effectively behaving as their own “privacy firewall” for filtering and managing the multitude of personal information flows. These decisions often require qualitative reasoning over privacy regulations, understanding privacy-sensitive contexts, and applying various privacy transformations when necessary We propose the use of Large Language Models (LLMs), which have demonstrated qualitative reasoning over social/legal norms, sensory data, and program synthesis, all of which are necessary for privacy firewalls. We present PrivacyOracle, a prototype system for configuring privacy firewalls on behalf of users using LLMs, enabling automated privacy decisions in smart built environments. Our evaluation shows that PrivacyOracle achieves up to 98% accuracy in identifying privacy-sensitive states from sensor data, and demonstrates 75% accuracy in measuring social acceptability of information flows.
+      We face novel privacy risks in today's smart environments, where overcollection and invasive inferences over personal sensory data have become the norm.  As the number of physical sensing devices and applications executed in such environments continue to grow, personal privacy will only become more difficult to manage.  In order to tackle the issues of manging personal privacy in unregulated sensing environments, we introduce the idea of <span class="b1">privacy firewalls</span>.  Privacy firewalls mediate the flow of information bewteen sensing infrastructure and service providers, and do so automatically on behalf of data subjects whose data is being collected.  
 
       </div>
-      <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+      
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/motivation.png" alt="MY ALT TEXT" class="b4"/>
+        
+      </div>
+      <h2 class="subtitle has-text-centered">
+        High level overview of privacy firewalls
+      </h2>
+      
+
+        <div class="content has-text-justified">
+          Privacy firewalls must possess several capabilities:  Firstly, qualititative reasoning about data-sharing decisions which necessarily involve legal rules, social values, utility of services, and personal privacy preferences.  Secondly, they must infer different states of users in the environment, and decide whether a particular state of a user (e.g. in a bathroom) presents privacy risks.  Lastly, a privacy firewall should be able to quickly adapt and use tools for preserving privacy under different privacy/utility tradeoffs.
+        </div>
 
     </div>
   </div>
 </section>
 
+
+<section class="hero is-small b3 is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Overview of PrivacyOracle</h2>
+      </div>
+      <div class="content has-text-justified">
+      PrivacyOracle is a Large Language Model (LLM) based privacy firewall.  We achieve each of the aforementioned tasks using the informational flow verification, sensitive state detection, and tool selection modules of our system.  Each module has a prompt template which interacts with a LLM.
+
+      </div>
+      
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/system.png" alt="MY ALT TEXT" class="b5"/>
+        
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Architecture of PrivacyOracle, our privacy firewall for regulating the flow of sensory data in smart-built environments via several LLM tasks.
+      </h2>
+      
+
+        <div class="content has-text-justified">
+          The first service is to verify information flow requests from a service provider to a sensing infrastructure. This service must identify the necessary knowledge to configure the privacy rules for sharing these informational flows. We use the same definition of informational flows as described in the theory of Contextual Integrity (CI).  
+
+          The second service in a privacy firewall is to identify sensitive segments of sensor data that should be hidden based on privacy preferences. This service requires sensor data to be augmented with metadata information (such as sensor type, location, and names), that grants additional context for identifying the sensitivity of data. This task filters out sensor data based on a privacy preference expressed in natural language.
+
+          The last service of a privacy firewall is to identify the appropriate tools for transforming sensor data into a format that is acceptable from a privacy perspective. This allows privacy firewalls to not only accept or reject informational flows but modify them such that they are acceptable. Tool selection involves reasoning over both the privacy preferences of users and a library of tools, which allows automated selection of a particular tool given different scenarios. Furthermore, this service not only selects tools but can generate dataflow pipelines using other preprocessing tools as well, which improves the interoperability of different tools without having to worry about modifying the tool interfaces.
+        </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small b7">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Results</h2>
+      </div>
+      <div class="content has-text-justified">
+      We evaluate our system on several privacy tasks, and use GPT-3.5 and GPT-4.0 as our LLM.
+
+      </div>
+
+      <!--Confusion matrix -->
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/cm.JPG" alt="MY ALT TEXT" class="b6"/>
+      </div>
+      <h2 class="subtitle has-text-centered lowpad">
+        Difference in acceptability scores of information flows with given recipient/transmission principle pairs, measured between LLM and a previous user study (see paper for reference)
+      </h2>
+
+      <!--Sensitive State Detection-->
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/sensitive_states.png" alt="MY ALT TEXT" class="b6 noborder"/>
+      </div>
+      <h2 class="subtitle has-text-centered lowpad">
+        Detection accuracy of GPT-4 for privacy-sensitive states from sensor data.  
+      </h2>
+      
+      <!--Pipeline example for tool selection-->
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/pipeline_example.png" alt="MY ALT TEXT" class="b4"/>
+      </div>
+      <h2 class="subtitle has-text-centered lowpad">
+        Response examples of GPT-4 for adapting privacy tools to natural language requirements
+      </h2>
+
+      <!--Privacy utility scores-->
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/tradeoffs.png" alt="MY ALT TEXT" class="b6 noborder"/>
+      </div>
+      <h2 class="subtitle has-text-centered lowpad">
+        Privacy (inferred age, gender, race) and utility scores (emotion) of pipelines generated by different privacy requirements (see paper/poster for more details). 
+      </h2>
+      
+
+    </div>
+  </div>
+</section>
 
 
 
